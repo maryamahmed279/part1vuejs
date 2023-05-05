@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3.0.0"></script>
+    <!-- the 0.0 in the link to be more specific of the version of the vue -->
+    <style>
+        #box{
+
+            background-color: pink;
+            color: antiquewhite;
+            margin: 40px auto;
+            font-size: larger;
+            padding:100px 0px;
+            max-width: 400px;
+            text-align: center;
+        }
+        ul{
+            background-color: rgb(85, 85, 204);
+            color: aliceblue;
+            text-align: center;
+           font-size: medium;
+           list-style-type: none;
+           max-width: 400px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+<div id="application1">
+    <div v-if="show">
+
+        <center><h1>{{title}}</h1></center>
+        <p>the auother name is<h4> {{name}} </h4>and born in<h4> {{birth}}</h4>guess the his age is {{age}}</p>
+        <!-- any button written in the div and inside write the javascript -->
+   <button v-on:click="age++">increase the age </button>
+   <button v-on:click="age--">decrase the age </button>
+   <!-- call the function -->
+   <button v-on:click="changebookname">change the book name</button>
+   <!-- cal the function and send an argumment -->
+   <button v-on:click="changeauothername('maryam')">change the auother name</button>
+    </div>
+    <!-- make a button to toggle he show and hidde -->
+    <button v-on:click="toggleshow">
+        <spain v-if="show">hide</spain>
+    <spain v-if="!show">show</spain> 
+   </button>
+   <!-- the mouse events -->
+   <div id="box" v-on:mouseover="handlevent">mouse over</div>
+   <div id="box"v-on:mouseleave="handlevent">mouse leave</div>
+   <div id="box"v-on:dblclick="handlevent">double click</div>
+   <div id="box"v-on:mousemove="handelmoveevent">mouse move {{x}} {{y}}</div>
+   <!-- the x and y to detrmine the offsite or the locaton of the mouse inside the box -->
+   <!-- the outputtinglists (v-for) -->
+   <div>
+    <ul>
+        <!-- we write the name of the array in the secound  -->
+        <li v-for="book in books">
+            my name is {{book.title}} and iam {{book.age}} years old 
+        </li>
+    </ul>
+   </div>
+</div>
+<script src="session1vue.js">
+</script>
+</body>
+</html>
